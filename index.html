@@ -1,19 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>Nosso Player ❤️</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header></header>
 
-    <main></main>
+    <header>
 
-    <footer></footer>
+        <h1>Arthur & Yasmin ❤️</h1>
+
+        <p>
+            2 meses de nós
+        </p>
+
+    </header>
+
+
+    <main>
+
+        <section id="player">
+
+            <!-- Capa da música atual -->
+            <div id="capa-musica">
+
+                <img id="imagem-musica" src="capas_musicas/" alt="Capa da música">
+
+            </div>
+
+
+            <!-- Informações da música -->
+            <div id="informacoes-musica">
+
+                <h2 id="titulo-musica">
+                    Escolha uma música
+                </h2>
+
+                <p id="artista-musica">
+                    Nossa playlist ❤️
+                </p>
+
+            </div>
+
+
+            <!-- Barra de progresso -->
+            <div id="barra-progresso">
+
+                <span id="tempo-atual">
+                    0:00
+                </span>
+
+                <input type="range" id="progresso" min="0" max="100" value="0">
+
+                <span id="duracao-musica">
+                    0:00
+                </span>
+
+            </div>
+
+
+            <!-- Controles do player -->
+            <div id="controles">
+
+                <button id="anterior" aria-label="Música anterior">
+                    ⏮️
+                </button>
+
+                <button id="play" aria-label="Reproduzir música">
+                    ▶️
+                </button>
+
+                <button id="proxima" aria-label="Próxima música">
+                    ⏭️
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <section id="playlist">
+
+            <h2>Nossa playlist 🎧</h2>
+
+            <p>
+                Um pouco de cada um de nós.
+            </p>
+
+            <div id="lista-musicas">
+
+                <!--
+                    O JavaScript vai colocar
+                    as músicas aqui.
+                -->
+
+            </div>
+
+        </section>
+
+        <section id="mensagem">
+
+            <h2>Dois meses ❤️</h2>
+
+            <p>
+                <!--
+                    Aqui depois colocaremos
+                    sua mensagem para ela.
+                -->
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Feito com ❤️ para nós dois.
+        </p>
+
+    </footer>
 
     <script src="script.js"></script>
+
 </body>
+
 </html>
