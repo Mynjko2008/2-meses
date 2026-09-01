@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -8,6 +8,8 @@
     <title>Nosso Player ❤️</title>
 
     <link rel="stylesheet" href="style.css">
+    <!-- Link para os ícones do Font Awesome -->
+    <script src="https://kit.fontawesome.com/fec10f46ff.js" crossorigin="anonymous"></script> 
 </head>
 
 <body>
@@ -30,7 +32,13 @@
             <!-- Capa da música atual -->
             <div id="capa-musica">
 
-                <img id="imagem-musica" src="capas_musicas/" alt="Capa da música">
+                <!--
+                    Correção: removido o src="capas_musicas/" (apontava para
+                    uma pasta, não um arquivo, e gerava erro 404 no console).
+                    O JavaScript deve definir o src real ao carregar cada música,
+                    ex: imagemMusica.src = "capas_musicas/nome-da-capa.jpg";
+                -->
+                <img id="imagem-musica" src="" alt="Capa da música">
 
             </div>
 
@@ -56,7 +64,8 @@
                     0:00
                 </span>
 
-                <input type="range" id="progresso" min="0" max="100" value="0">
+                <!-- Correção: aria-label adicionado para leitores de tela -->
+                <input type="range" id="progresso" min="0" max="100" value="0" aria-label="Progresso da música">
 
                 <span id="duracao-musica">
                     0:00
@@ -65,21 +74,28 @@
             </div>
 
 
-            <!-- Controles do player -->
+          <!-- Controles do player -->
             <div id="controles">
-
-                <button id="anterior" aria-label="Música anterior">
-                    ⏮️
+ 
+                <button type="button" id="anterior" aria-label="Música anterior">
+                    <i class="fa-solid fa-backward-step" aria-hidden="true"></i>
                 </button>
-
-                <button id="play" aria-label="Reproduzir música">
-                    ▶️
+ 
+                <!--
+                    Correção: o ícone do play tem id próprio (#icone-play) para
+                    o JavaScript trocar a classe entre "fa-play" e "fa-pause"
+                    conforme a música toca/pausa, ex:
+                    iconePlay.classList.toggle("fa-play");
+                    iconePlay.classList.toggle("fa-pause");
+                -->
+                <button type="button" id="play" aria-label="Reproduzir música">
+                    <i id="icone-play" class="fa-solid fa-play" aria-hidden="true"></i>
                 </button>
-
-                <button id="proxima" aria-label="Próxima música">
-                    ⏭️
+ 
+                <button type="button" id="proxima" aria-label="Próxima música">
+                    <i class="fa-solid fa-forward-step" aria-hidden="true"></i>
                 </button>
-
+ 
             </div>
 
         </section>
