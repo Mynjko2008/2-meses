@@ -1,0 +1,23 @@
+/*
+    Paleta escolhida:
+
+    Vermelho → #A83232
+    Vermelho escuro → #7F2424
+    Marrom → #4A2C24
+    Marrom escuro → #2B1A16
+    Creme → #F5E6D0
+    Creme claro → #FFF8EF
+    Branco → #FFFFFF
+
+    A ideia é usar o creme como base,
+    o marrom para profundidade e o vermelho
+    para os elementos importantes.
+*/
+
+
+/* Remove espaçamentos padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
