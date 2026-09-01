@@ -100,6 +100,9 @@ main {
     width: 280px;
     height: 280px;
 
+    /* Correção: evita que a capa ultrapasse o container em telas estreitas */
+    max-width: 100%;
+
     margin: 0 auto 25px;
 
     background-color: #4A2C24;
@@ -126,6 +129,9 @@ main {
 
 #informacoes-musica {
     margin-bottom: 25px;
+
+    /* Correção: impede que nomes longos estourem o layout */
+    overflow: hidden;
 }
 
 
@@ -135,6 +141,11 @@ main {
     color: #4A2C24;
 
     margin-bottom: 5px;
+
+    /* Correção: trunca títulos longos com reticências */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 
@@ -142,6 +153,10 @@ main {
     font-size: 1rem;
 
     color: #7F2424;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 
@@ -199,6 +214,7 @@ main {
     color: #FFFFFF;
 
     font-size: 1.2rem;
+    font-family: inherit;
 
     cursor: pointer;
 
@@ -226,6 +242,13 @@ main {
     background-color: #7F2424;
 
     transform: scale(1.08);
+}
+
+/* Correção: acessibilidade para navegação por teclado */
+#controles button:focus-visible,
+#progresso:focus-visible {
+    outline: 3px solid #A83232;
+    outline-offset: 2px;
 }
 
 
@@ -301,6 +324,15 @@ main {
     background-color: #F5E6D0;
 
     transform: translateX(5px);
+}
+
+/* Correção: se .musica tiver textos internos (ex: título/artista em <div>),
+   isso evita que eles estourem o card em vez de truncar */
+.musica > * {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 
