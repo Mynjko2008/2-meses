@@ -14,10 +14,340 @@
     para os elementos importantes.
 */
 
-
 /* Remove espaçamentos padrão do navegador */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: #F5E6D0;
+    color: #2B1A16;
+
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1.5;
+}
+
+
+header {
+    width: 100%;
+
+    padding: 35px 20px;
+
+    text-align: center;
+
+    background-color: #4A2C24;
+
+    color: #FFFFFF;
+
+    border-bottom: 5px solid #A83232;
+}
+
+
+header h1 {
+    font-size: 2.2rem;
+
+    margin-bottom: 5px;
+}
+
+
+header p {
+    font-size: 1.1rem;
+
+    color: #F5E6D0;
+}
+
+
+main {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 40px 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 35px;
+}
+
+
+#player {
+    width: 100%;
+
+    background-color: #FFF8EF;
+
+    border: 2px solid #4A2C24;
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    box-shadow: 0 10px 25px rgba(43, 26, 22, 0.15);
+
+    text-align: center;
+}
+
+#capa-musica {
+    width: 280px;
+    height: 280px;
+
+    margin: 0 auto 25px;
+
+    background-color: #4A2C24;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#imagem-musica {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+#informacoes-musica {
+    margin-bottom: 25px;
+}
+
+
+#titulo-musica {
+    font-size: 1.6rem;
+
+    color: #4A2C24;
+
+    margin-bottom: 5px;
+}
+
+
+#artista-musica {
+    font-size: 1rem;
+
+    color: #7F2424;
+}
+
+
+#barra-progresso {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+}
+
+
+#tempo-atual,
+#duracao-musica {
+    min-width: 40px;
+
+    font-size: 0.8rem;
+
+    color: #4A2C24;
+}
+
+
+#progresso {
+    width: 100%;
+
+    cursor: pointer;
+
+    accent-color: #A83232;
+}
+
+
+#controles {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+}
+
+
+#controles button {
+    width: 50px;
+    height: 50px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background-color: #4A2C24;
+
+    color: #FFFFFF;
+
+    font-size: 1.2rem;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+
+/* Botão principal de Play */
+
+#controles #play {
+    width: 65px;
+    height: 65px;
+
+    background-color: #A83232;
+
+    font-size: 1.5rem;
+}
+
+
+/* Efeito ao passar o mouse */
+
+#controles button:hover {
+    background-color: #7F2424;
+
+    transform: scale(1.08);
+}
+
+
+#playlist {
+    width: 100%;
+
+    background-color: #4A2C24;
+
+    color: #FFFFFF;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 25px rgba(43, 26, 22, 0.15);
+}
+
+
+#playlist h2 {
+    font-size: 1.7rem;
+
+    margin-bottom: 5px;
+}
+
+
+#playlist > p {
+    color: #F5E6D0;
+
+    margin-bottom: 25px;
+}
+
+
+#lista-musicas {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+/*
+    Cada música criada pelo JavaScript
+    poderá utilizar a classe .musica.
+*/
+
+.musica {
+    width: 100%;
+
+    padding: 15px;
+
+    background-color: #FFF8EF;
+
+    color: #2B1A16;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+
+.musica:hover {
+    background-color: #F5E6D0;
+
+    transform: translateX(5px);
+}
+
+
+#mensagem {
+    width: 100%;
+
+    padding: 35px;
+
+    background-color: #FFF8EF;
+
+    border-left: 6px solid #A83232;
+
+    border-radius: 15px;
+
+    box-shadow: 0 8px 20px rgba(43, 26, 22, 0.10);
+}
+
+
+#mensagem h2 {
+    color: #7F2424;
+
+    margin-bottom: 15px;
+}
+
+
+#mensagem p {
+    color: #4A2C24;
+
+    font-size: 1.05rem;
+}
+
+
+footer {
+    margin-top: auto;
+
+    padding: 25px 20px;
+
+    text-align: center;
+
+    background-color: #2B1A16;
+
+    color: #F5E6D0;
+
+    border-top: 4px solid #A83232;
+}
+
+
+footer p {
+    font-size: 0.9rem;
 }
