@@ -14,7 +14,6 @@
     para os elementos importantes.
 */
 
-
 /* Reset */
 
 * {
@@ -38,7 +37,6 @@ body {
     display: flex;
     flex-direction: column;
 }
-
 
 /* Header */
 

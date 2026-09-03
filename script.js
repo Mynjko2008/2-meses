@@ -15,10 +15,10 @@ const listaMusicas = document.getElementById("lista-musicas");
 
 const musicas = [
   {
-    titulo: "",
-    artista: "",
-    arquivo: "musicas/",
-    capa: "capas_musicas/",
+    titulo: "teste",
+    artista: "teste",
+    arquivo: "musicas/teste.mp3",
+    capa: "capas_musicas/teste",
   },
 ];
 
