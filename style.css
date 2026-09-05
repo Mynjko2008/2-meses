@@ -450,3 +450,246 @@ footer {
 footer p {
     font-size: 0.9rem;
 }
+
+
+/* Resposividade */
+
+/* Tablets (até 768px) */
+
+@media (max-width: 768px) {
+ 
+    main {
+        padding: 30px 16px;
+        gap: 25px;
+    }
+ 
+    header {
+        padding: 28px 16px;
+    }
+ 
+    header h1 {
+        font-size: 1.8rem;
+    }
+ 
+    header p {
+        font-size: 1rem;
+    }
+ 
+    #player,
+    #playlist,
+    #mensagem {
+        padding: 22px;
+    }
+ 
+    #capa-musica {
+        width: 220px;
+        height: 220px;
+ 
+        margin-bottom: 20px;
+    }
+ 
+    #titulo-musica {
+        font-size: 1.4rem;
+    }
+ 
+    #artista-musica {
+        font-size: 0.95rem;
+    }
+ 
+    #controles {
+        gap: 14px;
+    }
+ 
+    #controles button {
+        width: 46px;
+        height: 46px;
+ 
+        font-size: 1.05rem;
+    }
+ 
+    #controles #play {
+        width: 58px;
+        height: 58px;
+ 
+        font-size: 1.3rem;
+    }
+ 
+    #playlist h2 {
+        font-size: 1.5rem;
+    }
+ 
+    #mensagem h2 {
+        font-size: 1.5rem;
+ 
+        margin-bottom: 20px;
+    }
+ 
+    .texto-mensagem {
+        font-size: 1rem;
+    }
+}
+ 
+ 
+/* Celulares (até 480px) */
+ 
+@media (max-width: 480px) {
+ 
+    header h1 {
+        font-size: 1.5rem;
+    }
+ 
+    header p {
+        font-size: 0.9rem;
+    }
+ 
+    main {
+        padding: 20px 12px;
+        gap: 20px;
+    }
+ 
+    #player,
+    #playlist,
+    #mensagem {
+        padding: 18px;
+ 
+        border-radius: 15px;
+    }
+ 
+    #capa-musica {
+        width: 170px;
+        height: 170px;
+ 
+        margin-bottom: 16px;
+ 
+        border-radius: 12px;
+    }
+ 
+    #titulo-musica {
+        font-size: 1.15rem;
+    }
+ 
+    #artista-musica {
+        font-size: 0.85rem;
+    }
+ 
+    #barra-progresso {
+        gap: 6px;
+    }
+ 
+    #tempo-atual,
+    #duracao-musica {
+        min-width: 32px;
+ 
+        font-size: 0.7rem;
+    }
+ 
+    #controles {
+        gap: 10px;
+    }
+ 
+    #controles button {
+        width: 40px;
+        height: 40px;
+ 
+        font-size: 0.95rem;
+    }
+ 
+    #controles #play {
+        width: 52px;
+        height: 52px;
+ 
+        font-size: 1.15rem;
+    }
+ 
+    #playlist h2 {
+        font-size: 1.3rem;
+    }
+ 
+    #playlist > p {
+        margin-bottom: 18px;
+ 
+        font-size: 0.9rem;
+    }
+ 
+    .musica {
+        padding: 10px;
+ 
+        gap: 10px;
+    }
+ 
+    .musica img {
+        width: 46px;
+        height: 46px;
+    }
+ 
+    .musica strong {
+        font-size: 0.9rem;
+    }
+ 
+    .musica span {
+        font-size: 0.8rem;
+    }
+ 
+    #mensagem h2 {
+        font-size: 1.3rem;
+ 
+        margin-bottom: 16px;
+    }
+ 
+    .mensagem-destaque {
+        font-size: 0.8rem;
+    }
+ 
+    .texto-mensagem {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+ 
+    .texto-mensagem p {
+        margin-bottom: 14px;
+    }
+ 
+    .assinatura {
+        text-align: center;
+ 
+        margin-top: 22px;
+        padding-top: 15px;
+    }
+ 
+    footer {
+        padding: 18px 12px;
+    }
+ 
+    footer p {
+        font-size: 0.8rem;
+    }
+}
+ 
+ 
+/* Telas muito pequenas (até 340px) */
+ 
+@media (max-width: 340px) {
+ 
+    #capa-musica {
+        width: 140px;
+        height: 140px;
+    }
+ 
+    #controles {
+        gap: 8px;
+    }
+ 
+    #controles button {
+        width: 36px;
+        height: 36px;
+ 
+        font-size: 0.85rem;
+    }
+ 
+    #controles #play {
+        width: 46px;
+        height: 46px;
+ 
+        font-size: 1rem;
+    }
+}
