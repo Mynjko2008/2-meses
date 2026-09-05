@@ -15,13 +15,60 @@ const listaMusicas = document.getElementById("lista-musicas");
 
 const musicas = [
   {
-    titulo: "teste",
-    artista: "teste",
-    arquivo: "musicas/teste.mp3",
-    capa: "capas_musicas/teste",
+    titulo: "Doçura",
+    artista: "Marina Sena & Çantamarta",
+    arquivo: "musicas/docura.mp3",
+    capa: "capas_musicas/coisas_naturais.png"
   },
+  {
+    titulo: "Coisas Naturais",
+    artista: "Marina Sena",
+    arquivo: "musicas/coisas-naturais.mp3",
+    capa: "capas_musicas/coisas_naturais.png"
+  },
+  {
+    titulo: "Mágico",
+    artista: "Marina Sena",
+    arquivo: "musicas/magico.mp3",
+    capa: "capas_musicas/coisas_naturais.png"
+  },
+  {
+    titulo: "Desmitificar",
+    artista: "Marina Sena",
+    arquivo: "musicas/desmitificar.mp3",
+    capa: "capas_musicas/coisas_naturais.png"
+  },
+  {
+    titulo: "Carta de Maria",
+    artista: "Rubel & Marina Sena",
+    arquivo: "musicas/carta-de-maria.mp3",
+    capa: "capas_musicas/Carta.jpg"
+  },
+  {
+    titulo: "Aurora",
+    artista: "Jão",
+    arquivo: "musicas/aurora.mp3",
+    capa: "capas_musicas/Memorias.jpg"
+  },
+  {
+    titulo: "He's My Man",
+    artista: "Luvcat",
+    arquivo: "musicas/hes-my-man.mp3",
+    capa: "capas_musicas/hes_my.jpg"
+  },
+  {
+    titulo: "Can't Help Falling in Love",
+    artista: "Elvis Presley",
+    arquivo: "musicas/cant-help-falling-in-love.mp3",
+    capa: "capas_musicas/cant_help.jpg"
+  },
+  {
+    titulo: "Bring Me Back to Life",
+    artista: "Chris Grey & Allegra Jordyn",
+    arquivo: "musicas/bring-me-back-to-life.mp3",
+    capa: "capas_musicas/bring_me.jpg"
+  }
 ];
-
 const audio = new Audio();
 
 let musicaAtual = 0;
