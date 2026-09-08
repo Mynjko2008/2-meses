@@ -1,18 +1,22 @@
-/*
-    Paleta escolhida:
+:root {
+    --vermelho: #a83232;
+    --vermelho-escuro: #7f2424;
+    --marrom: #4a2c24;
+    --marrom-escuro: #2b1a16;
+    --creme: #f5e6d0;
+    --creme-claro: #fff8ef;
+    --branco: #ffffff;
+    --borda-clara: #e2cdb5;
 
-    Vermelho        → #A83232
-    Vermelho escuro → #7F2424
-    Marrom          → #4A2C24
-    Marrom escuro   → #2B1A16
-    Creme           → #F5E6D0
-    Creme claro     → #FFF8EF
-    Branco          → #FFFFFF
+    --sombra: 0 10px 25px rgba(43, 26, 22, 0.15);
+    --sombra-leve: 0 8px 20px rgba(43, 26, 22, 0.1);
 
-    A ideia é usar o creme como base,
-    o marrom para profundidade e o vermelho
-    para os elementos importantes.
-*/
+    --raio-grande: 20px;
+    --raio-medio: 15px;
+    --raio-pequeno: 12px;
+
+    --transicao: 0.2s ease;
+}
 
 /* Reset */
 
@@ -22,49 +26,63 @@
     box-sizing: border-box;
 }
 
+/* Acessibilidade */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
 
 /* Base */
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     min-height: 100vh;
 
+    display: flex;
+    flex-direction: column;
+
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
 
-    background-color: #f5e6d0;
-    color: #2b1a16;
-
-    display: flex;
-    flex-direction: column;
+    background-color: var(--creme);
+    color: var(--marrom-escuro);
 }
 
 /* Header */
 
 header {
     width: 100%;
-
     padding: 35px 20px;
 
     text-align: center;
 
-    background-color: #4a2c24;
-    color: #ffffff;
+    background-color: var(--marrom);
+    color: var(--branco);
 
-    border-bottom: 5px solid #a83232;
+    border-bottom: 5px solid var(--vermelho);
 }
 
 header h1 {
-    font-size: 2.2rem;
-
     margin-bottom: 5px;
+
+    font-size: 2.2rem;
 }
 
 header p {
     font-size: 1.1rem;
-
-    color: #f5e6d0;
+    color: var(--creme);
 }
-
 
 /* Main */
 
@@ -80,23 +98,21 @@ main {
     gap: 35px;
 }
 
-
 /* Player */
 
 #player {
     width: 100%;
-
     padding: 30px;
 
-    background-color: #fff8ef;
-    border: 2px solid #4a2c24;
-    border-radius: 20px;
-
-    box-shadow: 0 10px 25px rgba(43, 26, 22, 0.15);
-
     text-align: center;
-}
 
+    background-color: var(--creme-claro);
+
+    border: 2px solid var(--marrom);
+    border-radius: var(--raio-grande);
+
+    box-shadow: var(--sombra);
+}
 
 /* Capa da música */
 
@@ -107,39 +123,38 @@ main {
 
     margin: 0 auto 25px;
 
-    background-color: #4a2c24;
-    border-radius: 15px;
-
-    overflow: hidden;
-
     display: flex;
     align-items: center;
     justify-content: center;
+
+    overflow: hidden;
+
+    background-color: var(--marrom);
+    border-radius: var(--raio-medio);
 }
 
 #imagem-musica {
     width: 100%;
     height: 100%;
 
-    object-fit: cover;
     display: block;
-}
 
+    object-fit: cover;
+}
 
 /* Informações da música */
 
 #informacoes-musica {
     margin-bottom: 25px;
-
     overflow: hidden;
 }
 
 #titulo-musica {
-    font-size: 1.6rem;
-
     margin-bottom: 5px;
 
-    color: #4a2c24;
+    font-size: 1.6rem;
+
+    color: var(--marrom);
 
     white-space: nowrap;
     overflow: hidden;
@@ -149,13 +164,12 @@ main {
 #artista-musica {
     font-size: 1rem;
 
-    color: #7f2424;
+    color: var(--vermelho-escuro);
 
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
 
 /* Barra de progresso */
 
@@ -166,6 +180,7 @@ main {
 
     display: flex;
     align-items: center;
+
     gap: 10px;
 }
 
@@ -175,17 +190,25 @@ main {
 
     font-size: 0.8rem;
 
-    color: #4a2c24;
+    color: var(--marrom);
+}
+
+#tempo-atual {
+    text-align: left;
+}
+
+#duracao-musica {
+    text-align: right;
 }
 
 #progresso {
     width: 100%;
+    height: 6px;
 
     cursor: pointer;
 
-    accent-color: #a83232;
+    accent-color: var(--vermelho);
 }
-
 
 /* Controles */
 
@@ -193,6 +216,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+
     gap: 20px;
 }
 
@@ -200,113 +224,131 @@ main {
     width: 50px;
     height: 50px;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     border: none;
     border-radius: 50%;
 
-    background-color: #4a2c24;
-    color: #ffffff;
+    background-color: var(--marrom);
+    color: var(--branco);
 
-    font-size: 1.2rem;
     font-family: inherit;
+    font-size: 1.2rem;
 
     cursor: pointer;
 
     transition:
-        transform 0.2s ease,
-        background-color 0.2s ease;
+        transform var(--transicao),
+        background-color var(--transicao);
 }
 
 #controles #play {
     width: 65px;
     height: 65px;
 
-    font-size: 1.5rem;
+    background-color: var(--vermelho);
 
-    background-color: #a83232;
+    font-size: 1.5rem;
 }
 
 #controles button:hover {
-    background-color: #7f2424;
-
+    background-color: var(--vermelho-escuro);
     transform: scale(1.08);
+}
+
+#controles #play:hover {
+    background-color: var(--vermelho-escuro);
 }
 
 #controles button:focus-visible,
 #progresso:focus-visible {
-    outline: 3px solid #a83232;
-    outline-offset: 2px;
+    outline: 3px solid var(--vermelho);
+    outline-offset: 3px;
 }
 
+#controles button:active {
+    transform: scale(0.96);
+}
+
+/* Mensagem de erro */
+
+.mensagem-erro {
+    margin-top: 20px;
+
+    color: var(--vermelho-escuro);
+
+    font-size: 0.9rem;
+    font-weight: bold;
+}
 
 /* Playlist */
 
 #playlist {
     width: 100%;
-
     padding: 30px;
 
-    background-color: #4a2c24;
-    color: #ffffff;
+    background-color: var(--marrom);
+    color: var(--branco);
 
-    border-radius: 20px;
+    border-radius: var(--raio-grande);
 
-    box-shadow: 0 10px 25px rgba(43, 26, 22, 0.15);
+    box-shadow: var(--sombra);
 }
 
 #playlist h2 {
-    font-size: 1.7rem;
-
     margin-bottom: 5px;
+
+    font-size: 1.7rem;
 }
 
 #playlist > p {
     margin-bottom: 25px;
 
-    color: #f5e6d0;
+    color: var(--creme);
 }
 
 #lista-musicas {
     display: flex;
     flex-direction: column;
+
     gap: 10px;
 }
 
-
-/* Item de música */
+/* Item da playlist */
 
 .musica {
     width: 100%;
-
     padding: 15px;
-
-    background-color: #fff8ef;
-    color: #2b1a16;
-
-    border-radius: 12px;
 
     display: flex;
     align-items: center;
+
     gap: 15px;
+
+    background-color: var(--creme-claro);
+    color: var(--marrom-escuro);
+
+    border: 2px solid transparent;
+    border-radius: var(--raio-pequeno);
 
     cursor: pointer;
 
     transition:
-        transform 0.2s ease,
-        background-color 0.2s ease;
+        transform var(--transicao),
+        background-color var(--transicao),
+        border-color var(--transicao);
 }
 
 .musica:hover {
-    background-color: #f5e6d0;
-
+    background-color: var(--creme);
     transform: translateX(5px);
 }
 
-.musica > * {
-    min-width: 0;
-
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+.musica:focus-visible {
+    outline: 3px solid var(--vermelho);
+    outline-offset: 2px;
 }
 
 .musica img {
@@ -316,6 +358,7 @@ main {
     flex-shrink: 0;
 
     object-fit: cover;
+
     border-radius: 8px;
 }
 
@@ -328,63 +371,56 @@ main {
     text-align: left;
 }
 
-.musica strong {
-    font-size: 1rem;
-
-    color: #4a2c24;
-
+.musica strong,
+.musica span {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.musica strong {
+    font-size: 1rem;
+    color: var(--marrom);
 }
 
 .musica span {
     font-size: 0.9rem;
-
-    color: #7f2424;
-
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    color: var(--vermelho-escuro);
 }
 
-
-/* Música tocando no momento */
+/* Música atual */
 
 .musica-atual {
-    border: 2px solid #a83232;
-
-    background-color: #f5e6d0;
+    background-color: var(--creme);
+    border-color: var(--vermelho);
 
     transform: translateX(5px);
 }
 
 .musica-atual strong {
-    color: #a83232;
+    color: var(--vermelho);
 }
-
 
 /* Mensagem */
 
 #mensagem {
     width: 100%;
-
     padding: 35px;
 
-    background-color: #fff8ef;
+    background-color: var(--creme-claro);
 
-    border-left: 6px solid #a83232;
-    border-radius: 15px;
+    border-left: 6px solid var(--vermelho);
+    border-radius: var(--raio-medio);
 
-    box-shadow: 0 8px 20px rgba(43, 26, 22, 0.1);
+    box-shadow: var(--sombra-leve);
 }
 
 #mensagem h2 {
-    font-size: 1.8rem;
-
     margin-bottom: 25px;
 
-    color: #4a2c24;
+    font-size: 1.8rem;
+
+    color: var(--marrom);
 }
 
 .mensagem-destaque {
@@ -392,7 +428,7 @@ main {
 
     margin-bottom: 10px;
 
-    color: #a83232;
+    color: var(--vermelho);
 
     font-size: 0.9rem;
     font-weight: bold;
@@ -402,10 +438,10 @@ main {
 }
 
 .texto-mensagem {
+    color: var(--marrom);
+
     font-size: 1.05rem;
     line-height: 1.8;
-
-    color: #4a2c24;
 }
 
 .texto-mensagem p {
@@ -416,9 +452,9 @@ main {
     margin-top: 30px;
     padding-top: 20px;
 
-    border-top: 1px solid #e2cdb5;
+    border-top: 1px solid var(--borda-clara);
 
-    color: #7f2424;
+    color: var(--vermelho-escuro);
 
     font-size: 1rem;
 
@@ -426,270 +462,271 @@ main {
 }
 
 .assinatura strong {
+    color: var(--vermelho);
+
     font-size: 1.1rem;
-
-    color: #a83232;
 }
-
 
 /* Footer */
 
 footer {
     margin-top: auto;
-
     padding: 25px 20px;
 
     text-align: center;
 
-    background-color: #2b1a16;
-    color: #f5e6d0;
+    background-color: var(--marrom-escuro);
+    color: var(--creme);
 
-    border-top: 4px solid #a83232;
+    border-top: 4px solid var(--vermelho);
 }
 
 footer p {
     font-size: 0.9rem;
 }
 
-
-/* Resposividade */
-
-/* Tablets (até 768px) */
+/* Tablets */
 
 @media (max-width: 768px) {
- 
+    header {
+        padding: 28px 16px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
     main {
         padding: 30px 16px;
         gap: 25px;
     }
- 
-    header {
-        padding: 28px 16px;
-    }
- 
-    header h1 {
-        font-size: 1.8rem;
-    }
- 
-    header p {
-        font-size: 1rem;
-    }
- 
+
     #player,
     #playlist,
     #mensagem {
         padding: 22px;
     }
- 
+
     #capa-musica {
         width: 220px;
         height: 220px;
- 
+
         margin-bottom: 20px;
     }
- 
+
     #titulo-musica {
         font-size: 1.4rem;
     }
- 
+
     #artista-musica {
         font-size: 0.95rem;
     }
- 
+
     #controles {
         gap: 14px;
     }
- 
+
     #controles button {
         width: 46px;
         height: 46px;
- 
+
         font-size: 1.05rem;
     }
- 
+
     #controles #play {
         width: 58px;
         height: 58px;
- 
+
         font-size: 1.3rem;
     }
- 
+
     #playlist h2 {
         font-size: 1.5rem;
     }
- 
+
     #mensagem h2 {
-        font-size: 1.5rem;
- 
         margin-bottom: 20px;
+
+        font-size: 1.5rem;
     }
- 
+
     .texto-mensagem {
         font-size: 1rem;
     }
 }
- 
- 
-/* Celulares (até 480px) */
- 
+
+/* Celulares */
+
 @media (max-width: 480px) {
- 
     header h1 {
         font-size: 1.5rem;
     }
- 
+
     header p {
         font-size: 0.9rem;
     }
- 
+
     main {
         padding: 20px 12px;
         gap: 20px;
     }
- 
+
     #player,
     #playlist,
     #mensagem {
         padding: 18px;
- 
-        border-radius: 15px;
+        border-radius: var(--raio-medio);
     }
- 
+
     #capa-musica {
         width: 170px;
         height: 170px;
- 
+
         margin-bottom: 16px;
- 
+
         border-radius: 12px;
     }
- 
+
     #titulo-musica {
         font-size: 1.15rem;
     }
- 
+
     #artista-musica {
         font-size: 0.85rem;
     }
- 
+
     #barra-progresso {
         gap: 6px;
     }
- 
+
     #tempo-atual,
     #duracao-musica {
         min-width: 32px;
- 
         font-size: 0.7rem;
     }
- 
+
     #controles {
         gap: 10px;
     }
- 
+
     #controles button {
         width: 40px;
         height: 40px;
- 
+
         font-size: 0.95rem;
     }
- 
+
     #controles #play {
         width: 52px;
         height: 52px;
- 
+
         font-size: 1.15rem;
     }
- 
+
     #playlist h2 {
         font-size: 1.3rem;
     }
- 
+
     #playlist > p {
         margin-bottom: 18px;
- 
         font-size: 0.9rem;
     }
- 
+
     .musica {
         padding: 10px;
- 
         gap: 10px;
     }
- 
+
     .musica img {
         width: 46px;
         height: 46px;
     }
- 
+
     .musica strong {
         font-size: 0.9rem;
     }
- 
+
     .musica span {
         font-size: 0.8rem;
     }
- 
+
     #mensagem h2 {
-        font-size: 1.3rem;
- 
         margin-bottom: 16px;
+        font-size: 1.3rem;
     }
- 
+
     .mensagem-destaque {
         font-size: 0.8rem;
     }
- 
+
     .texto-mensagem {
         font-size: 0.95rem;
         line-height: 1.6;
     }
- 
+
     .texto-mensagem p {
         margin-bottom: 14px;
     }
- 
+
     .assinatura {
-        text-align: center;
- 
         margin-top: 22px;
         padding-top: 15px;
+
+        text-align: center;
     }
- 
+
     footer {
         padding: 18px 12px;
     }
- 
+
     footer p {
         font-size: 0.8rem;
     }
 }
- 
- 
-/* Telas muito pequenas (até 340px) */
- 
+
+/* Telas muito pequenas */
+
 @media (max-width: 340px) {
- 
     #capa-musica {
         width: 140px;
         height: 140px;
     }
- 
+
     #controles {
         gap: 8px;
     }
- 
+
     #controles button {
         width: 36px;
         height: 36px;
- 
+
         font-size: 0.85rem;
     }
- 
+
     #controles #play {
         width: 46px;
         height: 46px;
- 
+
         font-size: 1rem;
+    }
+}
+
+/* Redução de movimento */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
     }
 }
