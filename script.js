@@ -43,7 +43,7 @@ const musicas = [
   {
     titulo: "Desmitificar",
     artista: "Marina Sena",
-    arquivo: "musicas/desmitificar.mp3",
+    arquivo: "musicas/desmetificar.mp3",
     capa: "capas_musicas/coisas_naturais.png"
   },
   {
@@ -62,19 +62,19 @@ const musicas = [
     titulo: "He's My Man",
     artista: "Luvcat",
     arquivo: "musicas/he_s_my_man.mp3",
-    capa: "capas_musicas/hes_my.jpg"
+    capa: "capas_musicas/Hes_my.jpg"
   },
   {
     titulo: "Can't Help Falling in Love",
     artista: "Elvis Presley",
     arquivo: "musicas/can_t_help_falling_in_love.mp3",
-    capa: "capas_musicas/cant_help.jpg"
+    capa: "capas_musicas/Cant_help.jpg"
   },
   {
     titulo: "Bring Me Back to Life",
     artista: "Chris Grey & Allegra Jordyn",
     arquivo: "musicas/bring_me_back_to_life.mp3",
-    capa: "capas_musicas/bring_me.jpg"
+    capa: "capas_musicas/Bring_me.jpg"
   }
 ];
 
