@@ -184,7 +184,7 @@ nosso-player/
 │   ├── docura.mp3
 │   ├── coisas_naturais.mp3
 │   ├── magico.mp3
-│   ├── desmitificar.mp3
+│   ├── desmetificar.mp3
 │   ├── carta_de_maria.mp3
 │   ├── aurora.mp3
 │   ├── he_s_my_man.mp3

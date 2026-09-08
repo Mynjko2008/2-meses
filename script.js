@@ -75,6 +75,36 @@ const musicas = [
     artista: "Chris Grey & Allegra Jordyn",
     arquivo: "musicas/bring_me_back_to_life.mp3",
     capa: "capas_musicas/Bring_me.jpg"
+  },
+  {
+    titulo: "Do You Want To Know A Secret",
+    artista: "The Beatles",
+    arquivo: "musicas/do_you_want_to_know_a_secret.mp3",
+    capa: "capas_musicas/Plese_Please_Me.jpg"
+  },
+  {
+    titulo: "I Want To Hold Your Hand",
+    artista: "The Beatles",
+    arquivo: "musicas/i_want_to_hold_your_hand.mp3",
+    capa: "capas_musicas/Plese_Please_Me.jpg"
+  }, 
+  {
+    titulo: "Golden Slumbers & Carry That Weight & The End",
+    artista: "The Beatles",
+    arquivo: "musicas/Golden Slumbers _ Carry That Weight _ The End.mp3",
+    capa: "capas_musicas/Abbey_Road.jpg"
+  }, 
+  {
+    titulo: "I Want You (She's So Heavy)",
+    artista: "The Beatles",
+    arquivo: "musicas/i_want_you.mp3",
+    capa: "capas_musicas/Abbey_Road.jpg"
+  },
+  {
+    titulo: "Bound",
+    artista: "The Ponderosa Twins Plus One",
+    arquivo: "musicas/bound.mp3",
+    capa: "capas_musicas/ponderosa.jpg"
   }
 ];
 
