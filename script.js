@@ -91,7 +91,7 @@ const musicas = [
   {
     titulo: "Golden Slumbers & Carry That Weight & The End",
     artista: "The Beatles",
-    arquivo: "musicas/Golden Slumbers _ Carry That Weight _ The End.mp3",
+    arquivo: "musicas/golden_slumbers_carry_that_weight_the_end.mp3",
     capa: "capas_musicas/Abbey_Road.jpg"
   }, 
   {
