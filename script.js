@@ -23,7 +23,7 @@ const musicas = [
   {
     titulo: "Coisas Naturais",
     artista: "Marina Sena",
-    arquivo: "musicas/coisas-naturais.mp3",
+    arquivo: "musicas/coisas_naturais.mp3",
     capa: "capas_musicas/coisas_naturais.png"
   },
   {
@@ -41,7 +41,7 @@ const musicas = [
   {
     titulo: "Carta de Maria",
     artista: "Rubel & Marina Sena",
-    arquivo: "musicas/carta-de-maria.mp3",
+    arquivo: "musicas/carta_de_maria.mp3",
     capa: "capas_musicas/Carta.jpg"
   },
   {
@@ -53,19 +53,19 @@ const musicas = [
   {
     titulo: "He's My Man",
     artista: "Luvcat",
-    arquivo: "musicas/hes-my-man.mp3",
+    arquivo: "musicas/he-s_my_man.mp3",
     capa: "capas_musicas/hes_my.jpg"
   },
   {
     titulo: "Can't Help Falling in Love",
     artista: "Elvis Presley",
-    arquivo: "musicas/cant-help-falling-in-love.mp3",
+    arquivo: "musicas/cant_help_falling_in_love.mp3",
     capa: "capas_musicas/cant_help.jpg"
   },
   {
     titulo: "Bring Me Back to Life",
     artista: "Chris Grey & Allegra Jordyn",
-    arquivo: "musicas/bring-me-back-to-life.mp3",
+    arquivo: "musicas/bring_me_back_to_life.mp3",
     capa: "capas_musicas/bring_me.jpg"
   }
 ];
