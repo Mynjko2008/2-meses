@@ -1,47 +1,43 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="description"
+        content="Nosso Player — uma playlist especial criada para celebrar a história de Arthur e Yasmin.">
+
     <title>Nosso Player ❤️</title>
 
     <link rel="stylesheet" href="style.css">
-    <!-- Link para os ícones do Font Awesome -->
+
     <script src="https://kit.fontawesome.com/fec10f46ff.js" crossorigin="anonymous"></script>
 
     <link rel="shortcut icon" href="img/coracao.png" type="image/x-icon">
 </head>
 
 <body>
-
     <header>
-
         <h1>Arthur & Yasmin ❤️</h1>
 
-        <p>
-            2 meses de nós
-        </p>
-
+        <p>2 meses de nós</p>
     </header>
-
 
     <main>
 
-        <section id="player">
+        <section id="player" aria-labelledby="titulo-player">
 
-            <!-- Capa da música atual -->
+            <h2 id="titulo-player" class="sr-only">
+                Player de música
+            </h2>
+
             <div id="capa-musica">
-
-                <img id="imagem-musica" src="" alt="Capa da música">
-
+                <img id="imagem-musica" src="img/default-cover.png" alt="Capa da música atual" width="300" height="300">
             </div>
 
-
-            <!-- Informações da música -->
             <div id="informacoes-musica">
-
                 <h2 id="titulo-musica">
                     Escolha uma música
                 </h2>
@@ -49,18 +45,18 @@
                 <p id="artista-musica">
                     Nossa playlist ❤️
                 </p>
-
             </div>
 
+            <audio id="audio-player" preload="metadata"></audio>
 
-            <!-- Barra de progresso -->
             <div id="barra-progresso">
 
                 <span id="tempo-atual">
                     0:00
                 </span>
 
-                <input type="range" id="progresso" min="0" max="100" value="0" aria-label="Progresso da música">
+                <input type="range" id="progresso" min="0" max="100" value="0" step="0.1"
+                    aria-label="Progresso da música" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
 
                 <span id="duracao-musica">
                     0:00
@@ -68,13 +64,12 @@
 
             </div>
 
-
-            <!-- Controles do player -->
             <div id="controles">
 
                 <button type="button" id="anterior" aria-label="Música anterior">
                     <i class="fa-solid fa-backward-step" aria-hidden="true"></i>
                 </button>
+
                 <button type="button" id="play" aria-label="Reproduzir música">
                     <i id="icone-play" class="fa-solid fa-play" aria-hidden="true"></i>
                 </button>
@@ -85,30 +80,37 @@
 
             </div>
 
+            <p id="mensagem-erro" class="mensagem-erro" role="alert" hidden>
+                Não foi possível carregar esta música.
+            </p>
+
         </section>
 
 
-        <section id="playlist">
+        <section id="playlist" aria-labelledby="titulo-playlist">
 
-            <h2>Nossa playlist 🎧</h2>
+            <h2 id="titulo-playlist">
+                Nossa playlist 🎧
+            </h2>
 
             <p>
                 Um pouco de cada um de nós.
             </p>
 
-            <div id="lista-musicas">
-
-
-
-            </div>
+            <div id="lista-musicas" role="list" aria-label="Lista de músicas"></div>
 
         </section>
 
-        <section id="mensagem">
 
-            <span class="mensagem-destaque">❤️ 02 meses ❤️</span>
+        <section id="mensagem" aria-labelledby="titulo-mensagem">
 
-            <h2>Para você, Yasmin</h2>
+            <span class="mensagem-destaque">
+                ❤️ 02 meses ❤️
+            </span>
+
+            <h2 id="titulo-mensagem">
+                Para você, Yasmin
+            </h2>
 
             <div class="texto-mensagem">
 
@@ -179,19 +181,18 @@
 
         </section>
 
-
     </main>
 
 
     <footer>
-
         <p>
             Feito com ❤️ para nós dois.
         </p>
-
     </footer>
 
-    <script src="script.js"></script>
+
+    <script type="module" src="js/app.js"></script>
+
 
 </body>
 
