@@ -105,6 +105,18 @@ const musicas = [
     artista: "The Ponderosa Twins Plus One",
     arquivo: "musicas/bound.mp3",
     capa: "capas_musicas/ponderosa.jpg"
+  },
+  {
+    titulo: "Touch Me",
+    artista: "The Doors",
+    arquivo: "musicas/touch_me.mp3",
+    capa: "capas_musicas/the_soft_parade.jpg"
+  },
+  {
+    titulo: "Light My Fire",
+    artista: "The Doors",
+    arquivo: "musicas/light_my_fire.mp3",
+    capa: "capas_musicas/the_doors.jpg"
   }
 ];
 
