@@ -11,7 +11,7 @@
 
 ## 💌 Sobre o projeto
 
-**Nosso Player** é um site desenvolvido como uma surpresa de aniversário de dois meses de relacionamento.
+**Nosso Player** é um site desenvolvido como uma surpresa para celebrar dois meses de relacionamento.
 
 A ideia surgiu a partir de algo simples: transformar músicas que fazem parte da nossa história em uma experiência interativa.
 
@@ -20,6 +20,7 @@ Em vez de criar apenas uma página comemorativa, o projeto foi desenvolvido como
 O resultado é uma combinação entre **desenvolvimento web e memória afetiva**.
 
 > Cada música representa um pouco de nós.
+
 > Estilos diferentes, histórias diferentes, mas a mesma playlist. ❤️
 
 ---
@@ -38,10 +39,11 @@ O projeto conta com:
 * 🔄 Reprodução automática da próxima música
 * 🎨 Destaque visual da música atualmente selecionada
 * 📱 Layout responsivo para diferentes tamanhos de tela
-* ♿ Atributos de acessibilidade nos controles
-* 🎛️ Integração com a **Media Session API**
-* 🔒 Detecção de suporte do navegador para recursos da Media Session API
+* ♿ Recursos de acessibilidade nos controles
+* 🎛️ Integração com a Media Session API
+* 🔒 Verificação de suporte do navegador para recursos da Media Session API
 * ⏪ Controle de avanço e retrocesso através dos controles de mídia compatíveis
+* ⌨️ Seleção de músicas através do teclado
 
 ---
 
@@ -53,8 +55,8 @@ Ela permite que o navegador comunique informações da música para os controles
 
 O projeto utiliza a API para:
 
-* Exibir título da música
-* Exibir artista
+* Exibir o título da música
+* Exibir o artista
 * Exibir o álbum
 * Exibir a capa da música
 * Controlar reprodução e pausa
@@ -65,7 +67,7 @@ O projeto utiliza a API para:
 * Alterar a posição da reprodução
 * Atualizar o estado atual da reprodução
 
-Isso faz com que o player vá além de simplesmente reproduzir um arquivo `.mp3` dentro da página.
+Isso permite que o player interaja com recursos externos ao próprio site, como controles de mídia do sistema, teclados, fones de ouvido e dispositivos compatíveis.
 
 ---
 
@@ -84,7 +86,7 @@ O HTML organiza:
 * Mensagem comemorativa
 * Rodapé
 
-Também são utilizados recursos de acessibilidade, como `aria-label` e `aria-hidden`.
+Também são utilizados recursos de acessibilidade, como `aria-label`, `aria-hidden`, `role` e elementos semânticos.
 
 ### CSS3
 
@@ -97,14 +99,16 @@ O projeto utiliza:
 * Transições
 * Box Shadows
 * Border Radius
+* Variáveis CSS
 * Cores personalizadas
+* Estados de foco
 * Layout responsivo
 
-A interface foi projetada para funcionar tanto em computadores quanto em dispositivos móveis.
+A interface foi projetada para funcionar em computadores, tablets e dispositivos móveis.
 
 ### JavaScript
 
-Responsável pela lógica do player.
+Responsável pela lógica da aplicação.
 
 O JavaScript controla:
 
@@ -116,7 +120,10 @@ O JavaScript controla:
 * Formatação de tempo
 * Atualização das informações da interface
 * Eventos do player
+* Seleção de músicas
 * Media Session API
+
+O código foi dividido em módulos para facilitar a organização e manutenção do projeto.
 
 ### Font Awesome
 
@@ -126,6 +133,89 @@ Utilizado para os ícones dos controles do player, como:
 * Pause
 * Música anterior
 * Próxima música
+
+---
+
+## 🧩 Organização do JavaScript
+
+O JavaScript foi dividido em diferentes módulos, cada um responsável por uma parte específica da aplicação.
+
+### `musicas.js`
+
+Responsável exclusivamente pelos dados da playlist.
+
+Cada música possui informações como:
+
+```javascript
+{
+    titulo: "Nome da música",
+    artista: "Nome do artista",
+    arquivo: "musicas/musica.mp3",
+    capa: "capas_musicas/capa.jpg"
+}
+```
+
+### `player.js`
+
+Responsável pelo funcionamento do player.
+
+Controla:
+
+* Reprodução
+* Pausa
+* Música anterior
+* Próxima música
+* Seleção de uma música específica
+* Barra de progresso
+* Tempo atual
+* Duração
+* Eventos do elemento de áudio
+* Tratamento de erros
+
+### `playlist.js`
+
+Responsável pela criação e interação com a playlist.
+
+Controla:
+
+* Criação dos elementos da playlist
+* Clique nas músicas
+* Seleção através do teclado
+* Destaque da música atual
+
+### `mediaSession.js`
+
+Responsável exclusivamente pela integração com a **Media Session API**.
+
+Controla:
+
+* Metadados da música
+* Capa exibida nos controles de mídia
+* Play
+* Pause
+* Música anterior
+* Próxima música
+* Avanço
+* Retrocesso
+* Alteração da posição da música
+
+### `app.js`
+
+Responsável pela integração dos módulos.
+
+Ele conecta:
+
+```text
+musicas.js
+     ↓
+player.js
+     ↓
+playlist.js
+     ↓
+mediaSession.js
+```
+
+Dessa forma, cada arquivo possui uma responsabilidade específica, deixando o código mais organizado e fácil de modificar.
 
 ---
 
@@ -149,36 +239,43 @@ A escolha das cores busca equilibrar uma aparência romântica com uma interface
 
 ## 🎵 Playlist
 
-A playlist foi construída diretamente no JavaScript através de uma lista de objetos.
+A playlist é armazenada como uma lista de objetos JavaScript.
 
-Cada música possui informações como:
+Cada objeto representa uma música:
 
 ```javascript
 {
-    titulo: "Nome da música",
-    artista: "Nome do artista",
-    arquivo: "musicas/musica.mp3",
-    capa: "capas_musicas/capa.jpg"
+    titulo: "Doçura",
+    artista: "Marina Sena & Çantamarta",
+    arquivo: "musicas/docura.mp3",
+    capa: "capas_musicas/coisas_naturais.png"
 }
 ```
 
-Isso permite adicionar novas músicas sem precisar criar manualmente cada elemento da playlist no HTML.
+A partir desses dados, o JavaScript cria automaticamente os elementos da playlist.
 
-O JavaScript utiliza esses dados para gerar os elementos visualmente na página.
+Isso permite adicionar ou remover músicas alterando apenas os dados em `musicas.js`, sem precisar modificar manualmente o HTML.
 
 ---
 
 ## 📁 Estrutura do projeto
 
 ```text
-nosso-player/
+2-meses/
 │
 ├── index.html
 ├── style.css
-├── script.js
+│
+├── js/
+│   ├── app.js
+│   ├── player.js
+│   ├── playlist.js
+│   ├── musicas.js
+│   └── mediaSession.js
 │
 ├── img/
-│   └── coracao.png
+│   ├── coracao.png
+│   └── default-cover.png
 │
 ├── musicas/
 │   ├── docura.mp3
@@ -189,15 +286,27 @@ nosso-player/
 │   ├── aurora.mp3
 │   ├── he_s_my_man.mp3
 │   ├── can_t_help_falling_in_love.mp3
-│   └── bring_me_back_to_life.mp3
+│   ├── bring_me_back_to_life.mp3
+│   ├── do_you_want_to_know_a_secret.mp3
+│   ├── i_want_to_hold_your_hand.mp3
+│   ├── golden_slumbers_carry_that_weight_the_end.mp3
+│   ├── i_want_you.mp3
+│   ├── touch_me.mp3
+│   ├── light_my_fire.mp3
+│   └── bound.mp3
 │
 └── capas_musicas/
     ├── coisas_naturais.png
     ├── Carta.jpg
     ├── Memorias.jpg
-    ├── hes_my.jpg
-    ├── cant_help.jpg
-    └── bring_me.jpg
+    ├── Hes_my.jpg
+    ├── Cant_help.jpg
+    ├── Bring_me.jpg
+    ├── Plese_Please_Me.jpg
+    ├── Abbey_Road.jpg
+    ├── the_soft_parade.jpg
+    ├── the_doors.jpg
+    └── ponderosa.jpg
 ```
 
 ---
@@ -214,6 +323,24 @@ Foram definidos breakpoints para:
 * 📱 Dispositivos com telas muito pequenas
 
 Elementos como a capa da música, controles, textos, espaçamentos e cards são redimensionados conforme o tamanho disponível.
+
+---
+
+## ♿ Acessibilidade
+
+O projeto também possui algumas práticas de acessibilidade.
+
+Entre elas:
+
+* `aria-label` nos controles
+* `aria-hidden` nos ícones decorativos
+* Navegação da playlist pelo teclado
+* Suporte às teclas `Enter` e `Espaço`
+* Estados de foco visíveis
+* Elementos semânticos em HTML
+* Mensagens de erro utilizando `role="alert"`
+* Texto alternativo nas imagens
+* Uso de `prefers-reduced-motion` para reduzir animações quando solicitado pelo sistema
 
 ---
 
@@ -234,38 +361,54 @@ A seção funciona como a parte mais pessoal da aplicação, enquanto o player r
 ### 1. Clone o repositório
 
 ```bash
-git clone https://mynjko2008.github.io/2-meses/.git
+git clone https://github.com/mynjko2008/2-meses.git
 ```
 
 ### 2. Entre na pasta
 
 ```bash
-cd nosso-player
+cd 2-meses
 ```
 
 ### 3. Execute o projeto
 
-Como o projeto é desenvolvido utilizando HTML, CSS e JavaScript puro, não é necessário instalar dependências ou utilizar um servidor para executá-lo localmente.
+O projeto utiliza **JavaScript Modules**, através de:
 
-Basta abrir:
-
-```text
-index.html
+```html
+<script type="module" src="js/app.js"></script>
 ```
 
-em um navegador compatível.
+Por isso, para executar localmente, é recomendado utilizar um servidor local.
+
+Uma opção simples é utilizar o **Live Server** no Visual Studio Code.
+
+Outra alternativa é utilizar o servidor HTTP do Python:
+
+```bash
+python -m http.server
+```
+
+Depois, acesse no navegador:
+
+```text
+http://localhost:8000
+```
+
+Não existem dependências externas de Node.js ou pacotes que precisem ser instalados para executar o projeto.
 
 ---
 
 ## 🌐 Publicação
 
-O projeto pode ser publicado gratuitamente utilizando o **GitHub Pages**.
+O projeto está preparado para ser publicado utilizando o **GitHub Pages**.
 
-Após configurar o GitHub Pages, o site pode ser acessado através de uma URL no formato:
+A versão publicada pode ser acessada em:
 
 ```text
 https://mynjko2008.github.io/2-meses/
 ```
+
+O GitHub Pages permite que o projeto seja disponibilizado diretamente como uma aplicação web estática.
 
 ---
 
@@ -279,6 +422,8 @@ Entre eles:
 * Eventos em JavaScript
 * Objetos e arrays
 * Funções
+* Módulos JavaScript
+* `import` e `export`
 * Manipulação de elementos HTML
 * Reprodução de áudio com JavaScript
 * APIs nativas do navegador
@@ -287,6 +432,9 @@ Entre eles:
 * Organização de arquivos
 * Acessibilidade
 * Estruturação de interfaces web
+* Separação de responsabilidades
+
+A divisão do JavaScript em módulos também serviu para aplicar conceitos de organização e arquitetura de código em um projeto real.
 
 ---
 
