@@ -35,7 +35,7 @@ const musicas = [
   {
     titulo: "Desmitificar",
     artista: "Marina Sena",
-    arquivo: "musicas/desmitificar.mp3",
+    arquivo: "musicas/desmetificar.mp3",
     capa: "capas_musicas/coisas_naturais.png"
   },
   {
