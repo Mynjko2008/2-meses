@@ -101,12 +101,6 @@ const musicas = [
     capa: "capas_musicas/Abbey_Road.jpg"
   },
   {
-    titulo: "Bound",
-    artista: "The Ponderosa Twins Plus One",
-    arquivo: "musicas/bound.mp3",
-    capa: "capas_musicas/ponderosa.jpg"
-  },
-  {
     titulo: "Touch Me",
     artista: "The Doors",
     arquivo: "musicas/touch_me.mp3",
@@ -117,6 +111,12 @@ const musicas = [
     artista: "The Doors",
     arquivo: "musicas/light_my_fire.mp3",
     capa: "capas_musicas/the_doors.jpg"
+  },
+  {
+    titulo: "Bound",
+    artista: "The Ponderosa Twins Plus One",
+    arquivo: "musicas/bound.mp3",
+    capa: "capas_musicas/ponderosa.jpg"
   }
 ];
 
