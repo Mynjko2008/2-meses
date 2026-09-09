@@ -6,40 +6,54 @@ export function atualizarMediaSession(musica) {
         return;
     }
 
-    navigator.mediaSession.metadata =
-        new MediaMetadata({
-            title: musica.titulo,
-            artist: musica.artista,
-            album: "Arthur & Yasmin ❤️",
+    navigator.mediaSession.metadata = new MediaMetadata({
+        title: musica.titulo,
+        artist: musica.artista,
+        album: "Arthur & Yasmin ❤️",
+        artwork: [
+            {
+                src: musica.capa,
+                sizes: "96x96",
+                type: obterTipoImagem(musica.capa)
+            },
+            {
+                src: musica.capa,
+                sizes: "128x128",
+                type: obterTipoImagem(musica.capa)
+            },
+            {
+                src: musica.capa,
+                sizes: "192x192",
+                type: obterTipoImagem(musica.capa)
+            },
+            {
+                src: musica.capa,
+                sizes: "256x256",
+                type: obterTipoImagem(musica.capa)
+            },
+            {
+                src: musica.capa,
+                sizes: "512x512",
+                type: obterTipoImagem(musica.capa)
+            }
+        ]
+    });
+}
 
-            artwork: [
-                {
-                    src: musica.capa,
-                    sizes: "96x96",
-                    type: obterTipoImagem(musica.capa)
-                },
-                {
-                    src: musica.capa,
-                    sizes: "128x128",
-                    type: obterTipoImagem(musica.capa)
-                },
-                {
-                    src: musica.capa,
-                    sizes: "192x192",
-                    type: obterTipoImagem(musica.capa)
-                },
-                {
-                    src: musica.capa,
-                    sizes: "256x256",
-                    type: obterTipoImagem(musica.capa)
-                },
-                {
-                    src: musica.capa,
-                    sizes: "512x512",
-                    type: obterTipoImagem(musica.capa)
-                }
-            ]
-        });
+export function atualizarEstadoMediaSession(estado) {
+    if (!("mediaSession" in navigator)) {
+        return;
+    }
+
+    if (
+        estado !== "none" &&
+        estado !== "paused" &&
+        estado !== "playing"
+    ) {
+        return;
+    }
+
+    navigator.mediaSession.playbackState = estado;
 }
 
 function obterTipoImagem(caminho) {
@@ -93,7 +107,10 @@ export function configurarMediaSession({
     configurarAcao(
         "seekbackward",
         () => {
-            if (!Number.isFinite(audio.duration)) {
+            if (
+                !Number.isFinite(audio.duration) ||
+                !Number.isFinite(audio.currentTime)
+            ) {
                 return;
             }
 
@@ -108,7 +125,10 @@ export function configurarMediaSession({
     configurarAcao(
         "seekforward",
         () => {
-            if (!Number.isFinite(audio.duration)) {
+            if (
+                !Number.isFinite(audio.duration) ||
+                !Number.isFinite(audio.currentTime)
+            ) {
                 return;
             }
 

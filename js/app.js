@@ -1,9 +1,12 @@
 import { musicas } from "./musicas.js";
+
 import { iniciarPlayer } from "./player.js";
+
 import {
     criarPlaylist,
     destacarMusica
 } from "./playlist.js";
+
 import {
     configurarMediaSession
 } from "./mediaSession.js";
